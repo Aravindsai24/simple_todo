@@ -5,8 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.simple_todo.modal.Word
 
-class rv_main_adapter(val data: ArrayList<String>): RecyclerView.Adapter<rv_main_adapter.customViewHolder>() {
+class rv_main_adapter(var data: List<Word>): RecyclerView.Adapter<rv_main_adapter.customViewHolder>() {
     class customViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val textView: TextView
         init {
@@ -20,7 +21,7 @@ class rv_main_adapter(val data: ArrayList<String>): RecyclerView.Adapter<rv_main
     }
 
     override fun onBindViewHolder(holder: customViewHolder, position: Int) {
-        holder.textView.text = data[position]
+        holder.textView.text = data[position].word
     }
 
     override fun getItemCount(): Int {

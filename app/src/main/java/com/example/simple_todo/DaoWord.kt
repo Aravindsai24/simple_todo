@@ -1,4 +1,4 @@
-package com.example.simple_todo.data
+package com.example.simple_todo
 
 import androidx.room.Dao
 import androidx.room.Insert
@@ -10,7 +10,10 @@ interface DaoWord {
     @Insert
     fun insert(word: Word)
 
-    @Query("SELECT * FROM word_table ORDER BY word ASC")
+    @Query("SELECT * FROM word_table")
     fun getAlphabetizedWords(): List<Word>
+
+    @Query("DELETE FROM word_table WHERE word = :title")
+    fun deleteWord(title: String)
 
 }
