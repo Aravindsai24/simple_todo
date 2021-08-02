@@ -18,4 +18,9 @@ class WordRepository(application: Application) {
         insertTask.execute()
     }
 
+    fun deleteWord(id: Int) {
+        var deleteTask = DeleteTask(daoWord,id)
+        deleteTask.execute()
+    }
+
 }

@@ -16,4 +16,8 @@ class WordViewModel(application: Application) : AndroidViewModel(application) {
     fun insertWord(word: Word) {
         wRepository.insertWord(word)
     }
+
+    fun deleteWord(id: Int) {
+        wRepository.deleteWord(id)
+    }
 }

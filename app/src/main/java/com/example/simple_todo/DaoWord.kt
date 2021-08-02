@@ -14,7 +14,7 @@ interface DaoWord {
     @Query("SELECT * FROM word_table")
     fun getAllWords(): LiveData<List<Word>>
 
-    @Query("DELETE FROM word_table WHERE word = :title")
-    fun deleteWord(title: String)
+    @Query("DELETE FROM word_table WHERE id = :id")
+    fun deleteWord(id: Int)
 
 }
